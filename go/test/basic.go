@@ -51,6 +51,7 @@ func main() {
 	euler()
 	tiangle()
 	consts()
+	enums()
 }
 
 func euler(){
@@ -79,3 +80,30 @@ func consts(){
 	fmt.Println(filename, c)
 }
 
+//枚举类型
+func enums() {
+	const(
+		cpp = 0
+		java = 1
+		python = 2
+		golang = 3
+	)
+	//使用简便方式 iota  输出0 1 2
+	const(
+		x = iota
+		y
+		z
+	)
+	//使用iota作为种子进行一些逻辑运算
+	const(
+		b = 1 << (10*iota)
+		kb
+		mb
+		gb
+		tb
+		pb
+	)
+	fmt.Println(cpp, java, python, golang)
+	fmt.Println(x, y, z)
+	fmt.Println(b, kb, mb, gb, tb, pb)
+}
