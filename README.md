@@ -16,4 +16,10 @@ golang Learning
 ## basic2  
 在go中使用ioutil读取文件 返回两个值分别是byte[] 以及err  
 if的条件中可以进行赋值  
-if的条件中的作用域就在这个if的语句块中
+if的条件中的作用域就在这个if的语句块中  
+
+## loop 
+for if 后面的条件没有括号  
+if语句中也可以定义变量  
+没有while  
+switch不需要break 也可以直接switch多个条件
