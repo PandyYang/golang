@@ -42,4 +42,14 @@ switch不需要break 也可以直接switch多个条件
 切片只能向后扩展不能向前进行扩展  
 向其中添加元素超过cap时 系统会重新分配底层数组的空间  
 由于值传递的关系 必须接受append 的返回值  
-s = append(s,val)
+s = append(s,val)  
+
+## rune  
+rune相当于go的char  
+
+- 使用range遍历pos rune对  
+- 使用utf8.RuneCountInString获得字符数量  
+- 使用len获得字节长度  
+- 使用[]byte获得字节  
+go语言中的byte和rune有什么区别  
+其实质上就是unit8 和int32类型  byte强调数据是_row data_ 而不是数字,rune用来表示Unicode的
