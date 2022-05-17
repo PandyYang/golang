@@ -12,6 +12,6 @@ func test(name string, f func(string)) {
 	f(name)
 }
 
-func main() {
-	test("pandy", sayHello)
-}
+// func main() {
+// 	test("pandy", sayHello)
+// }
