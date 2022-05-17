@@ -2,68 +2,67 @@ package main
 
 import (
 	"fmt"
-	"math/cmplx"
 	"math"
+	"math/cmplx"
 )
 
 //包内变量 外面不能写 :=
 
 var (
 	sdsd = 1
-	dw = "ss"
+	dw   = "ss"
 )
-
 
 var aa = 3
 var ss = "ddd"
 var nn = true
 
-func variableZeroValue(){
+func variableZeroValue() {
 	var a int
 	var s string
-	fmt.Printf("%d %q\n",a,s)
+	fmt.Printf("%d %q\n", a, s)
 }
 
-func variableInitialValie(){
+func variableInitialValie() {
 	var a int = 4
 	var s string = "abc"
-	fmt.Println(a,s)
+	fmt.Println(a, s)
 }
 
-func variableTypeDeduction(){
+func variableTypeDeduction() {
 	var a, b, c, d = 3, 4, true, "def"
 	var s = "abx"
-	fmt.Println(a,b,c,d,s)
+	fmt.Println(a, b, c, d, s)
 }
 
-func variableShorter(){
+func variableShorter() {
 	a, b, c, d := 3, 4, true, "def"
 	b = 5
 	fmt.Println(a, b, c, d)
 }
 
-func main() {
-	fmt.Println("Hello World")
-	variableZeroValue()
-	variableInitialValie()
-	variableTypeDeduction()
-	variableShorter()
-	euler()
-	tiangle()
-	consts()
-	enums()
-}
+// func main() {
+// 	fmt.Println("Hello World")
+// 	variableZeroValue()
+// 	variableInitialValie()
+// 	variableTypeDeduction()
+// 	variableShorter()
+// 	euler()
+// 	tiangle()
+// 	consts()
+// 	enums()
+// }
 
-func euler(){
+func euler() {
 	c := 3 + 4i
 	fmt.Println(cmplx.Abs(c))
 	//e的i Pi次方+1 前面是底数 后面是指数
-	fmt.Println(cmplx.Pow(math.E, 1i * math.Pi)+1)
+	fmt.Println(cmplx.Pow(math.E, 1i*math.Pi) + 1)
 	//以下可以输出0
-	fmt.Printf("%.3f\n",cmplx.Exp(1i * math.Pi) +1)
+	fmt.Printf("%.3f\n", cmplx.Exp(1i*math.Pi)+1)
 }
 
-func tiangle(){
+func tiangle() {
 	var a, b int = 3, 4
 	var c int
 	//类型不一致时 必须进行强制类型转换
@@ -72,7 +71,7 @@ func tiangle(){
 }
 
 //定义常量
-func consts(){
+func consts() {
 	const filename = "abx.txt"
 	const a, b = 3, 4
 	var c int
@@ -82,21 +81,21 @@ func consts(){
 
 //枚举类型
 func enums() {
-	const(
-		cpp = 0
-		java = 1
+	const (
+		cpp    = 0
+		java   = 1
 		python = 2
 		golang = 3
 	)
 	//使用简便方式 iota  输出0 1 2
-	const(
+	const (
 		x = iota
 		y
 		z
 	)
 	//使用iota作为种子进行一些逻辑运算
-	const(
-		b = 1 << (10*iota)
+	const (
+		b = 1 << (10 * iota)
 		kb
 		mb
 		gb

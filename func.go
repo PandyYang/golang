@@ -2,35 +2,34 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"reflect"
 	"runtime"
-	"math"
 )
 
 //swith可以设置多个满足条件
 func eval1(a, b int, op string) (int, error) {
 	switch op {
-	case  "+":
+	case "+":
 		return a + b, nil
-	case  "-":
+	case "-":
 		return a - b, nil
 	case "*":
 		return a * b, nil
 	case "/":
-		q, _ := div(a,b)//可以使用 _ 代替无输入
+		q, _ := div(a, b) //可以使用 _ 代替无输入
 		return q, nil
 	default:
-		return 0 ,fmt.Errorf("unsupported operation: %s",op)
+		return 0, fmt.Errorf("unsupported operation: %s", op)
 	}
 }
 
 //函数可以有两个返回值 可以起名 仅适用于简单的函数 对于调用者而言是没有区别的
-func div(a, b int)(q, r int){
-	return a/b , a%b
+func div(a, b int) (q, r int) {
+	return a / b, a % b
 }
 
-
-func apply(op func(int, int) int, a, b int) int{
+func apply(op func(int, int) int, a, b int) int {
 	//获取当前函数的指针
 	p := reflect.ValueOf(op).Pointer()
 	//根据指针获取当前运行的函数名
@@ -42,7 +41,7 @@ func apply(op func(int, int) int, a, b int) int{
 }
 
 func pow(a, b int) int {
-	return int(math.Pow(float64(a),float64(b)))
+	return int(math.Pow(float64(a), float64(b)))
 }
 
 //可变参数列表
@@ -54,25 +53,24 @@ func sum(numbers ...int) int {
 	return s
 }
 
-func main() {
-	fmt.Println(eval1(5,8,"+"))
+// func main() {
+// 	fmt.Println(eval1(5,8,"+"))
 
-	q, r := div(30,4)
-	fmt.Println(q, r)
-	if result, err := eval1(3,4,"x"); err != nil{
-		fmt.Println("error:",err)
-	} else {
-		fmt.Println(result)
-	}
-	fmt.Println(apply(pow, 3 ,4))
-	//在可以直接定义匿名函数
-	fmt.Println(apply(
-		func(a int, b int) int {
-			return int (math.Pow(
-				float64(a),float64(b)))
-		}, 3, 4))
+// 	q, r := div(30,4)
+// 	fmt.Println(q, r)
+// 	if result, err := eval1(3,4,"x"); err != nil{
+// 		fmt.Println("error:",err)
+// 	} else {
+// 		fmt.Println(result)
+// 	}
+// 	fmt.Println(apply(pow, 3 ,4))
+// 	//在可以直接定义匿名函数
+// 	fmt.Println(apply(
+// 		func(a int, b int) int {
+// 			return int (math.Pow(
+// 				float64(a),float64(b)))
+// 		}, 3, 4))
 
+// 	fmt.Println(sum(1, 2, 3, 4, 5))
 
-	fmt.Println(sum(1, 2, 3, 4, 5))
-
-}
+// }
