@@ -1,8 +1,8 @@
-package main
+package base
 
 import "fmt"
 
-//数组是值类型
+// 数组是值类型
 func printArray(arr [5]int) {
 	//以为是值类型 在方法内部会将各个数组进行拷贝
 	arr[0] = 100
@@ -11,7 +11,7 @@ func printArray(arr [5]int) {
 	}
 }
 
-//但是可以使用指针来进行改变为引用传递
+// 但是可以使用指针来进行改变为引用传递
 func printArray2(arr *[3]int) {
 	arr[0] = 1000
 	for i, v := range arr {

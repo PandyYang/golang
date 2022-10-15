@@ -1,4 +1,4 @@
-package main
+package base
 
 //var i int = 100
 //

@@ -1,4 +1,4 @@
-package main
+package base
 
 import (
 	"fmt"
@@ -70,7 +70,7 @@ func tiangle() {
 	fmt.Println(c)
 }
 
-//定义常量
+// 定义常量
 func consts() {
 	const filename = "abx.txt"
 	const a, b = 3, 4
@@ -79,7 +79,7 @@ func consts() {
 	fmt.Println(filename, c)
 }
 
-//枚举类型
+// 枚举类型
 func enums() {
 	const (
 		cpp    = 0

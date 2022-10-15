@@ -1,4 +1,4 @@
-package main
+package _func
 
 // init is a special function, always run ahead main func
 func init() {

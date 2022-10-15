@@ -1,4 +1,4 @@
-package main
+package _func
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 	"runtime"
 )
 
-//swith可以设置多个满足条件
+// swith可以设置多个满足条件
 func eval1(a, b int, op string) (int, error) {
 	switch op {
 	case "+":
@@ -24,7 +24,7 @@ func eval1(a, b int, op string) (int, error) {
 	}
 }
 
-//函数可以有两个返回值 可以起名 仅适用于简单的函数 对于调用者而言是没有区别的
+// 函数可以有两个返回值 可以起名 仅适用于简单的函数 对于调用者而言是没有区别的
 func div(a, b int) (q, r int) {
 	return a / b, a % b
 }
@@ -44,7 +44,7 @@ func pow(a, b int) int {
 	return int(math.Pow(float64(a), float64(b)))
 }
 
-//可变参数列表
+// 可变参数列表
 func sum(numbers ...int) int {
 	s := 0
 	for i := range numbers {

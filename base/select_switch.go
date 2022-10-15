@@ -1,4 +1,4 @@
-package main
+package base
 
 //
 //var chanInt = make(chan int, 0)

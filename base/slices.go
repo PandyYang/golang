@@ -1,7 +1,7 @@
-package main
+package base
 
-//使用切片就可以不使用指针 直接改变底层数组的值
-//起到一个视图的作用
+// 使用切片就可以不使用指针 直接改变底层数组的值
+// 起到一个视图的作用
 func updateslice(arr []int) {
 	arr[0] = 100
 }

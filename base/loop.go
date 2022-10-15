@@ -1,4 +1,4 @@
-package main
+package base
 
 import (
 	"bufio"
@@ -29,7 +29,7 @@ func printFile(filename string) {
 	}
 }
 
-//省略其实递增结束条件
+// 省略其实递增结束条件
 func forever() {
 	for {
 		fmt.Println("112")

@@ -1,4 +1,4 @@
-package main
+package base
 
 // func main() {
 // 	m := map[string]string{
@@ -24,7 +24,7 @@ package main
 // 	}
 // }
 
-//字符串中最长的无重复的子字符串的长度
+// 字符串中最长的无重复的子字符串的长度
 func lengthConDup(s string) int {
 	lastOccurred := make(map[byte]int)
 	start := 0
